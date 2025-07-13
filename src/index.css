@@ -1,0 +1,355 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    background: linear-gradient(135deg, #fef7ed 0%, #fdf2f8 50%, #fff7ed 100%);
+  }
+}
+
+@layer utilities {
+  .vintage-paper {
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 183, 197, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(251, 191, 36, 0.03) 0%, transparent 50%);
+  }
+  
+  .vintage-section {
+    position: relative;
+  }
+  
+  .vintage-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.01) 2px,
+        rgba(0, 0, 0, 0.01) 4px
+      );
+    pointer-events: none;
+  }
+  
+  .vintage-title {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #be185d, #ec4899, #f97316);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vintage-text {
+    font-family: 'Playfair Display', serif;
+    color: #6b7280;
+  }
+  
+  .vintage-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .vintage-envelope {
+    position: relative;
+    background: linear-gradient(135deg, #fefbf3 0%, #fef7ed 100%);
+  }
+  
+  .vintage-envelope::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(251, 191, 36, 0.05) 10px,
+        rgba(251, 191, 36, 0.05) 20px
+      );
+    pointer-events: none;
+  }
+  
+  .vintage-letter {
+    background: linear-gradient(135deg, #fefbf3 0%, #fef7ed 100%);
+    position: relative;
+  }
+  
+  .vintage-paper-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 24px,
+        rgba(251, 191, 36, 0.1) 24px,
+        rgba(251, 191, 36, 0.1) 25px
+      );
+    pointer-events: none;
+  }
+  
+  .vintage-photo-frame {
+    position: relative;
+  }
+  
+  .vintage-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 49%, rgba(251, 191, 36, 0.1) 50%, transparent 51%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .vintage-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .vintage-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .vintage-button:hover::before {
+    left: 100%;
+  }
+  
+  .vintage-heart {
+    filter: drop-shadow(0 4px 8px rgba(244, 63, 94, 0.3));
+  }
+  
+  .vintage-hero {
+    background: 
+      radial-gradient(circle at 30% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(244, 63, 94, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #fef7ed 0%, #fdf2f8 50%, #fff7ed 100%);
+  }
+  
+  .sepia-filter {
+    filter: sepia(20%) contrast(1.1) brightness(1.05);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 1s ease-out 0.5s forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-text-shimmer {
+    background-size: 200% 200%;
+    animation: textShimmer 4s ease-in-out infinite;
+  }
+  
+  .animate-heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 4s linear infinite;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Custom scrollbar with vintage styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(251, 191, 36, 0.1);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #f97316, #ec4899);
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ea580c, #db2777);
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+p, span, div {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.7;
+}
+
+/* Vintage paper texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.005) 2px,
+      rgba(0, 0, 0, 0.005) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.005) 2px,
+      rgba(0, 0, 0, 0.005) 4px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
